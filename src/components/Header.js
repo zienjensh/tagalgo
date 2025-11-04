@@ -152,7 +152,7 @@ const Header = () => {
                 </button>
                 {/* Facebook Icon */}
                 <a 
-                  href="#" 
+                  href="https://www.facebook.com" 
                   className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-all duration-300 group"
                   target="_blank"
                   rel="noopener noreferrer"

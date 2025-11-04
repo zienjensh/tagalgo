@@ -12,7 +12,8 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import ScrollAnimations from './components/ScrollAnimations';
 
 const AppContent = () => {
-  const { language, changeLanguage, isRTL } = useLanguage();
+  // eslint-disable-next-line no-unused-vars
+  const { changeLanguage, isRTL } = useLanguage();
   const [showLanguageModal, setShowLanguageModal] = useState(false);
 
   useEffect(() => {
