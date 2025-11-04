@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.34712191.css",
+    "main.js": "/static/js/main.60529c5b.js",
+    "static/media/3.svg": "/static/media/3.64f523cb91e3bdf50c74bdbbf140f4b3.svg",
+    "static/media/1.svg": "/static/media/1.e576cb464bf561560688a85dc5aaa84b.svg",
+    "static/media/2.svg": "/static/media/2.e49703e5ba05a81c8ee75b75c0784f36.svg",
+    "static/media/Taskor Personal Use.ttf": "/static/media/Taskor Personal Use.46c11653dccecc9dca81.ttf",
+    "static/media/logo.png": "/static/media/logo.ef313411e457a331cc78.png",
+    "static/media/4.svg": "/static/media/4.52bbcd2cfc02a4a798097f29c605b8da.svg",
+    "static/media/cover.png": "/static/media/cover.5d2263c92df934c195f5.png",
+    "static/media/5.svg": "/static/media/5.0818ae2c14d4c83999c4c5298fc8921a.svg",
+    "index.html": "/index.html",
+    "main.34712191.css.map": "/static/css/main.34712191.css.map",
+    "main.60529c5b.js.map": "/static/js/main.60529c5b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34712191.css",
+    "static/js/main.60529c5b.js"
+  ]
+}
