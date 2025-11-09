@@ -214,18 +214,79 @@ html {
   width: 8px;
 }
 
-    /* Clients carousel animation */
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
+    /* Hide scrollbar but keep functionality */
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+
+    /* Smooth scrolling for clients carousel */
+    .scrollbar-hide {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Auto-scroll container */
+    .auto-scroll-container {
+      scroll-behavior: auto !important; /* Disable smooth scroll for programmatic scrolling */
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    /* Clients scroll wrapper with seamless loop */
+    .clients-scroll-wrapper {
+      will-change: transform;
+    }
+
+    /* Touch manipulation for better mobile experience */
+    .touch-manipulation {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Improve scroll snap on mobile */
+    @media (max-width: 768px) {
+      [style*="scrollSnapType"] {
+        scroll-padding: 1rem;
       }
     }
 
-    .animate-scroll {
-      animation: scroll 20s linear infinite;
+    /* Smooth auto-scroll animation - starts from middle */
+    @keyframes smoothAutoScroll {
+      0% {
+        transform: translateX(calc(-100% / 6));
+      }
+      100% {
+        transform: translateX(calc(-100% / 6 - 100% / 3));
+      }
+    }
+
+    /* Auto-scroll animation class - faster speed */
+    .clients-scroll-wrapper.auto-scroll-active {
+      animation: smoothAutoScroll 15s linear infinite;
+    }
+
+    /* Pause animation on hover */
+    .auto-scroll-container:hover .clients-scroll-wrapper.auto-scroll-active {
+      animation-play-state: paused;
+    }
+
+    /* RTL support for animation */
+    @keyframes smoothAutoScrollRTL {
+      0% {
+        transform: translateX(calc(100% / 6));
+      }
+      100% {
+        transform: translateX(calc(100% / 6 + 100% / 3));
+      }
+    }
+
+    [dir="rtl"] .clients-scroll-wrapper.auto-scroll-active {
+      animation: smoothAutoScrollRTL 15s linear infinite;
     }
 
     /* Floating animation */

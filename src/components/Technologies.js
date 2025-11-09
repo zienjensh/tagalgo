@@ -50,7 +50,7 @@ const Technologies = () => {
   ];
 
   return (
-    <section id="technologies-section" className="py-16 px-6 bg-white relative overflow-hidden">
+    <section id="technologies-section" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 bg-neon-green rounded-full animate-pulse"></div>
@@ -60,7 +60,7 @@ const Technologies = () => {
       </div>
 
       {/* Title */}
-      <div className="relative z-10 text-center mb-12">
+      <div className="relative z-10 text-center mb-16 md:mb-20">
         {/* Background Text */}
         <div className={`absolute inset-0 flex items-center justify-center transform transition-all duration-1500 ${
           isScrolled ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'

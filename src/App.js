@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import LanguageModal from './components/LanguageModal';
+import PortfolioModal from './components/PortfolioModal';
+import ContactModal from './components/ContactModal';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Technologies from './components/Technologies';
@@ -15,6 +17,8 @@ const AppContent = () => {
   // eslint-disable-next-line no-unused-vars
   const { changeLanguage, isRTL } = useLanguage();
   const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showPortfolioModal, setShowPortfolioModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   useEffect(() => {
     // Check if language was already selected
@@ -41,6 +45,18 @@ const AppContent = () => {
       {showLanguageModal && (
         <LanguageModal onLanguageSelect={handleLanguageSelect} />
       )}
+
+      {/* Portfolio Modal */}
+      <PortfolioModal 
+        isOpen={showPortfolioModal} 
+        onClose={() => setShowPortfolioModal(false)} 
+      />
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={showContactModal} 
+        onClose={() => setShowContactModal(false)} 
+      />
       
       {/* Main container with rounded corners and border */}
       <div className="mx-auto max-w-7xl">
@@ -48,7 +64,7 @@ const AppContent = () => {
         <Header />
 
         {/* Hero Section */}
-        <Hero />
+        <Hero onViewExamples={() => setShowPortfolioModal(true)} />
 
         {/* Technologies Section */}
         <Technologies />
@@ -57,7 +73,10 @@ const AppContent = () => {
         <OurTopClients />
         
         {/* Cases Section */}
-        <Cases />
+        <Cases 
+          onViewAllProjects={() => setShowPortfolioModal(true)}
+          onStartProject={() => setShowContactModal(true)}
+        />
       </div>
       
       {/* Footer */}

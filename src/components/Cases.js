@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-const Cases = () => {
+const Cases = ({ onViewAllProjects, onStartProject }) => {
   const { t, isRTL } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +29,7 @@ const Cases = () => {
   }, []);
 
   return (
-    <section id="services" className="py-16 px-6 relative overflow-hidden bg-white">
+    <section id="services" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden bg-white">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 bg-neon-green rounded-full animate-pulse"></div>
@@ -51,7 +51,7 @@ const Cases = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Title */}
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-16 md:mb-20 relative">
           {/* Background Text */}
           <div className={`absolute inset-0 flex items-center justify-center transform transition-all duration-1500 ${
             isScrolled ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'
@@ -254,13 +254,21 @@ const Cases = () => {
         <div className={`flex flex-col sm:flex-row gap-4 justify-center transform transition-all duration-1000 delay-600 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`} data-animate>
-          <button className="bg-white/20 backdrop-blur-md text-dark-grey px-8 py-4 rounded-full font-medium border-2 border-white/30 hover:border-neon-green hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg hover:scale-110 hover:shadow-2xl btn-animated hover-lift" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+          <button 
+            onClick={onViewAllProjects}
+            className="bg-white/20 backdrop-blur-md text-dark-grey px-8 py-4 rounded-full font-medium border-2 border-white/30 hover:border-neon-green hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg hover:scale-110 hover:shadow-2xl btn-animated hover-lift" 
+            style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
+          >
             <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300">
               {t('viewAllProjects')}
             </span>
             <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
           </button>
-          <button className="bg-neon-green text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg border-2 border-neon-green hover:scale-110 hover:shadow-2xl btn-animated hover-lift" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+          <button 
+            onClick={onStartProject}
+            className="bg-neon-green text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg border-2 border-neon-green hover:scale-110 hover:shadow-2xl btn-animated hover-lift" 
+            style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
+          >
             <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300">
               {t('startYourProject')}
             </span>

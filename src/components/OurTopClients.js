@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import client1 from '../assets/Client/1.svg';
 import client2 from '../assets/Client/2.svg';
@@ -10,6 +10,29 @@ const OurTopClients = () => {
   const { t, isRTL } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const scrollContainerRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const animationRef = useRef(null);
+
+  // Handle WhatsApp consultation
+  const handleBecomeOne = () => {
+    const phoneNumber = '201155277506';
+    const message = isRTL 
+      ? 'مرحباً، أريد أن أصبح واحداً من عملائكم المميزين'
+      : 'Hello, I would like to become one of your valued clients';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  // Note: Auto-scroll is now handled by CSS animation for better performance
+
+  // Pause on hover/touch
+  const handleMouseEnter = () => setIsPaused(true);
+  const handleMouseLeave = () => setIsPaused(false);
+  const handleTouchStart = () => setIsPaused(true);
+  const handleTouchEnd = () => {
+    setTimeout(() => setIsPaused(false), 2000); // Resume after 2 seconds
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,7 +65,7 @@ const OurTopClients = () => {
   ];
 
   return (
-    <section id="our-top-clients" className="py-16 px-6 relative overflow-hidden rounded-3xl mx-6 my-6" style={{
+    <section id="our-top-clients" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden rounded-3xl" style={{
       backgroundColor: '#f0fdf4'
     }}>
       {/* Background Pattern */}
@@ -54,7 +77,7 @@ const OurTopClients = () => {
       </div>
 
       {/* Title */}
-      <div className="relative z-10 text-center mb-12">
+      <div className="relative z-10 text-center mb-16 md:mb-20">
         {/* Background Text */}
         <div className={`absolute inset-0 flex items-center justify-center transform transition-all duration-1500 ${
           isScrolled ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'
@@ -83,19 +106,49 @@ const OurTopClients = () => {
 
       {/* Clients Carousel */}
       <div className="relative z-10">
-        <div className="overflow-hidden">
-          <div className={`flex animate-scroll transform transition-all duration-1000 delay-500 ${
-            isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-          }`}>
+        <div 
+          ref={scrollContainerRef}
+          className={`overflow-hidden scrollbar-hide transform transition-all duration-1000 delay-500 auto-scroll-container ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`} 
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          style={{
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          <div 
+            className={`flex gap-4 md:gap-6 clients-scroll-wrapper ${isVisible && !isPaused ? 'auto-scroll-active' : ''}`}
+            style={{
+              width: 'max-content',
+              paddingLeft: '1rem',
+              paddingRight: '1rem',
+              paddingTop: '0.5rem',
+              paddingBottom: '0.5rem',
+              willChange: 'transform'
+            }}
+          >
             {/* First set of clients */}
             {clients.map((client) => (
-              <div key={`first-${client.id}`} className="flex-shrink-0 mx-8 group">
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 border border-gray-100">
-                  <div className="w-32 h-20 flex items-center justify-center">
+              <div 
+                key={`first-${client.id}`} 
+                className="flex-shrink-0 group"
+                style={{
+                  scrollSnapAlign: 'start',
+                  scrollSnapStop: 'always'
+                }}
+              >
+                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                  <div className="w-full h-20 md:h-24 flex items-center justify-center">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      draggable="false"
                     />
                   </div>
                 </div>
@@ -104,18 +157,57 @@ const OurTopClients = () => {
             
             {/* Duplicate set for seamless loop */}
             {clients.map((client) => (
-              <div key={`second-${client.id}`} className="flex-shrink-0 mx-8 group">
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 border border-gray-100">
-                  <div className="w-32 h-20 flex items-center justify-center">
+              <div 
+                key={`second-${client.id}`} 
+                className="flex-shrink-0 group"
+                style={{
+                  scrollSnapAlign: 'start',
+                  scrollSnapStop: 'always'
+                }}
+              >
+                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                  <div className="w-full h-20 md:h-24 flex items-center justify-center">
                     <img
                       src={client.logo}
                       alt={client.name}
-                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      draggable="false"
                     />
                   </div>
                 </div>
               </div>
             ))}
+            
+            {/* Third set for extra seamless loop */}
+            {clients.map((client) => (
+              <div 
+                key={`third-${client.id}`} 
+                className="flex-shrink-0 group"
+                style={{
+                  scrollSnapAlign: 'start',
+                  scrollSnapStop: 'always'
+                }}
+              >
+                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                  <div className="w-full h-20 md:h-24 flex items-center justify-center">
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      draggable="false"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="mt-4 flex items-center justify-center gap-2">
+          <div className="text-xs text-gray-500 flex items-center gap-2" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+            <div className={`w-2 h-2 rounded-full ${isPaused ? 'bg-gray-400' : 'bg-neon-green animate-pulse'}`}></div>
+            <span>{isRTL ? (isPaused ? 'متوقف - اسحب للتمرير' : 'تمرير تلقائي') : (isPaused ? 'Paused - Swipe to scroll' : 'Auto scrolling')}</span>
           </div>
         </div>
       </div>
@@ -135,7 +227,11 @@ const OurTopClients = () => {
         <div className={`mt-8 transform transition-all duration-1000 delay-900 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <button className="bg-gradient-to-r from-neon-green to-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-blue-500 hover:to-neon-green hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group relative overflow-hidden" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+          <button 
+            onClick={handleBecomeOne}
+            className="bg-gradient-to-r from-neon-green to-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-blue-500 hover:to-neon-green hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group relative overflow-hidden" 
+            style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
+          >
             <span className="relative z-10 group-hover:text-black transition-colors duration-300">
               {t('becomeOne')}
             </span>

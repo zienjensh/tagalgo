@@ -127,7 +127,7 @@ const Header = () => {
           </nav>
 
               {/* Right Side: Language Toggle + Social Icons */}
-              <div className={`flex items-center space-x-3 transform transition-all duration-1000 delay-500 ${
+              <div className={`flex items-center gap-3 md:gap-4 transform transition-all duration-1000 delay-500 ${
                 isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
               }`}>
                 {/* Language Toggle */}

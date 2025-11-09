@@ -14,7 +14,7 @@ const Footer = () => {
 
 
   return (
-    <footer className="relative bg-dark-grey text-white py-16 px-6 overflow-hidden">
+    <footer className="relative bg-dark-grey text-white py-20 md:py-24 px-6 overflow-hidden mt-20 md:mt-24">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-tl from-white/10 via-transparent to-neon-green/20"></div>
       
@@ -28,7 +28,7 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Main Title and Tagline */}
-        <div className={`text-center mb-16 transform transition-all duration-1000 ${
+        <div className={`text-center mb-16 md:mb-20 transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="flex items-center justify-center mb-4">
@@ -42,12 +42,12 @@ const Footer = () => {
             </div>
           </div>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
-            {t('tagline')}
+            {t('')}
           </p>
         </div>
 
         {/* Contact Information */}
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 transform transition-all duration-1000 delay-300 ${
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16 md:mb-20 transform transition-all duration-1000 delay-300 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           {/* Location */}
@@ -99,10 +99,10 @@ const Footer = () => {
         </div>
 
         {/* Social Media Icons */}
-        <div className={`text-center mb-16 transform transition-all duration-1000 delay-500 ${
+        <div className={`text-center mb-16 md:mb-20 transform transition-all duration-1000 delay-500 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center gap-4 md:gap-6">
             {/* Facebook */}
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-neon-green transition-all duration-300 group">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-white group-hover:scale-110 transition-transform duration-300">

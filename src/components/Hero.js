@@ -2,10 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import coverImage from '../assets/cover.png';
 
-const Hero = () => {
+const Hero = ({ onViewExamples }) => {
   const { t, isRTL } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+  // Handle WhatsApp consultation
+  const handleGetConsultation = () => {
+    const phoneNumber = '201155277506';
+    const message = isRTL 
+      ? 'مرحباً، أريد الحصول على استشارة مجانية حول خدماتكم'
+      : 'Hello, I would like to get a free consultation about your services';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -55,7 +65,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={`hero-section bg-dark-grey rounded-3xl mx-6 my-6 relative overflow-hidden transform transition-all duration-700 ease-in-out ${
+    <div className={`hero-section bg-dark-grey rounded-3xl ms-6 me-6 mt-20 md:mt-24 mb-20 md:mb-24 relative overflow-hidden transform transition-all duration-700 ease-in-out ${
       isVisible ? 'translate-y-0 opacity-100 scale-100 rotate-0' : 'translate-y-20 opacity-0 scale-95 rotate-1'
     } ${isHeroVisible ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-full opacity-0 scale-90'}`} style={{
       animation: isVisible ? 'slideInUp 1.5s ease-out' : 'none'
@@ -168,13 +178,21 @@ const Hero = () => {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
             }`} data-animate>
               {/* Main Action Buttons */}
-              <button className="bg-dark-grey text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-gray-800 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-neon-green/20 flex-1 sm:flex-none btn-animated hover-lift" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+              <button 
+                onClick={onViewExamples}
+                className="bg-dark-grey text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-gray-800 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-neon-green/20 flex-1 sm:flex-none btn-animated hover-lift" 
+                style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
+              >
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300 font-semibold">
                   {t('viewExamples')}
                 </span>
                 <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
-              <button className="bg-white text-dark-grey px-4 py-3 rounded-full text-sm font-medium border-2 border-dark-grey hover:bg-gray-100 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-dark-grey/20 flex-1 sm:flex-none btn-animated hover-lift" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+              <button 
+                onClick={handleGetConsultation}
+                className="bg-white text-dark-grey px-4 py-3 rounded-full text-sm font-medium border-2 border-dark-grey hover:bg-gray-100 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-dark-grey/20 flex-1 sm:flex-none btn-animated hover-lift" 
+                style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
+              >
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300 font-semibold">
                   {t('getConsultation')}
                 </span>

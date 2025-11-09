@@ -17,8 +17,8 @@ export const translations = {
     programmingLanguages: "Programming languages",
     
     // Our Top Clients Section
-    ourTopClients: "Our Top Clients",
-    clients: "CLIENTS",
+    ourTopClients: "Our most important work",
+    clients: "work",
     storyQuote: "We don't just offer a product, we tell a story.",
     storyText: "Every product we carry carries a unique story, through which we deliver real value to our customers.",
     becomeOne: "I want to become one of them",
@@ -69,8 +69,8 @@ export const translations = {
     programmingLanguages: "لغات البرمجة",
     
     // Our Top Clients Section
-    ourTopClients: "أفضل عملائنا",
-    clients: "العملاء",
+    ourTopClients: "أخر اعمالنا",
+    clients: "اهم الأعمال",
     storyQuote: "نحن لا نقدم منتجاً فحسب، بل نحكي قصة.",
     storyText: "كل منتج نحمله يحمل قصة فريدة، من خلالها نقدم قيمة حقيقية لعملائنا.",
     becomeOne: "أريد أن أصبح واحداً منهم",
