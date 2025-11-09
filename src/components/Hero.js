@@ -96,8 +96,10 @@ const Hero = ({ onViewExamples }) => {
         <div className="relative w-full h-full">
           <img 
             src={coverImage} 
-            alt="Watermark" 
+            alt="TagAlgo - تاج ألغو Watermark" 
             className="w-full h-full object-contain filter blur-sm"
+            loading="lazy"
+            decoding="async"
             style={{
               opacity: 0.15,
               boxShadow: '0 0 25px rgba(0, 255, 136, 0.3), 0 0 50px rgba(0, 255, 136, 0.15)',
@@ -114,8 +116,10 @@ const Hero = ({ onViewExamples }) => {
         <div className="relative w-full h-full">
           <img 
             src={coverImage} 
-            alt="Watermark" 
+            alt="TagAlgo - تاج ألغو Watermark" 
             className="w-full h-full object-contain filter blur-sm"
+            loading="lazy"
+            decoding="async"
             style={{
               opacity: 0.2,
               boxShadow: '0 0 20px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.2)',
@@ -151,14 +155,33 @@ const Hero = ({ onViewExamples }) => {
                           )
                         ));
                       } else if (title.includes('واقعاً')) {
+                        // Split by '...' first to handle the ellipsis properly
+                        const parts = title.split('...');
+                        if (parts.length > 1) {
+                          const afterEllipsis = parts[1].trim(); // Remove leading/trailing spaces
+                          const realityIndex = afterEllipsis.indexOf('واقعاً');
+                          if (realityIndex !== -1) {
+                            const beforeReality = afterEllipsis.substring(0, realityIndex).trim();
+                            const afterReality = afterEllipsis.substring(realityIndex + 5).trim();
+                            return (
+                              <>
+                                <span>{parts[0].trim()}...</span>
+                                <span className="mx-2">{beforeReality}</span>
+                                <span className="neon-glow text-neon-green mx-1">واقعاً</span>
+                                <span className="mx-1">{afterReality}</span>
+                              </>
+                            );
+                          }
+                        }
+                        // Fallback to original logic if no ellipsis
                         return title.split('واقعاً').map((part, index) => (
                           index === 0 ? (
                             <span key={index}>
-                              {part}
-                              <span className="neon-glow text-neon-green">واقعاً</span>
+                              {part.trim()}
+                              <span className="neon-glow text-neon-green mx-1">واقعاً</span>
                             </span>
                           ) : (
-                            <span key={index}>{part}</span>
+                            <span key={index} className="mx-1">{part.trim()}</span>
                           )
                         ));
                       }

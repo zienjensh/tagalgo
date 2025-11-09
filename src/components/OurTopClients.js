@@ -147,6 +147,8 @@ const OurTopClients = () => {
                       src={client.logo}
                       alt={client.name}
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      loading="lazy"
+                      decoding="async"
                       draggable="false"
                     />
                   </div>
@@ -170,6 +172,8 @@ const OurTopClients = () => {
                       src={client.logo}
                       alt={client.name}
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      loading="lazy"
+                      decoding="async"
                       draggable="false"
                     />
                   </div>
@@ -193,6 +197,8 @@ const OurTopClients = () => {
                       src={client.logo}
                       alt={client.name}
                       className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+                      loading="lazy"
+                      decoding="async"
                       draggable="false"
                     />
                   </div>

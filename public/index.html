@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#00ff88" />
+    <meta name="msapplication-TileColor" content="#00ff88" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
     
     <!-- Primary Meta Tags -->
     <title>Tag Algo - تاج ألغو | تطوير مواقع ويب متقدمة وحلول تقنية مبتكرة</title>
@@ -73,62 +75,197 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Tag Algo - تاج ألغو",
-      "alternateName": "Tag Algo",
+      "name": "TagAlgo - تاج ألغو",
+      "alternateName": "TagAlgo",
       "url": "https://tagalgo.com",
-      "logo": "https://tagalgo.com/logo.png",
-      "description": "Tag Algo - تاج ألغو: شركة رائدة في تطوير المواقع الإلكترونية وتطبيقات الهاتف المحمول. نقدم خدمات تطوير مواقع ويب احترافية، تطبيقات أندرويد وآيفون، حلول التجارة الإلكترونية، تصميم واجهات المستخدم، التسويق الرقمي. خبرة واسعة في React, Node.js, Python, MongoDB. استشارة مجانية!",
+      "logo": "https://tagalgo.com/logo512.png",
+      "image": "https://tagalgo.com/og-image.jpg",
+      "description": "TagAlgo - تاج ألغو: شركة رائدة في تطوير المواقع الإلكترونية وتطبيقات الهاتف المحمول. نقدم خدمات تطوير مواقع ويب احترافية، تطبيقات أندرويد وآيفون، حلول التجارة الإلكترونية، تصميم واجهات المستخدم، التسويق الرقمي. خبرة واسعة في React, Node.js, Python, MongoDB. استشارة مجانية!",
       "foundingDate": "2024",
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "SA",
-        "addressRegion": "Riyadh"
+        "addressCountry": "EG",
+        "addressRegion": "Cairo",
+        "addressLocality": "Cairo"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "availableLanguage": ["Arabic", "English"]
-      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+201155277506",
+          "email": "info@tagalgo.com",
+          "availableLanguage": ["Arabic", "English"],
+          "areaServed": "Worldwide"
+        }
+      ],
       "sameAs": [
-        "https://www.linkedin.com/company/tagalgo",
-        "https://twitter.com/tagalgo",
-        "https://github.com/tagalgo"
+        "https://www.facebook.com/tagalgo",
+        "https://x.com/tagalgo",
+        "https://www.instagram.com/tagalgo.official/",
+        "https://www.youtube.com/@tagalgo.official",
+        "https://www.tiktok.com/@tagalgo.official"
       ],
       "service": [
         {
           "@type": "Service",
           "name": "تطوير المواقع الإلكترونية",
-          "description": "تطوير مواقع ويب متقدمة ومتجاوبة باستخدام أحدث التقنيات"
+          "description": "تطوير مواقع ويب متقدمة ومتجاوبة باستخدام أحدث التقنيات مثل React, Node.js, Python, MongoDB",
+          "provider": {
+            "@type": "Organization",
+            "name": "TagAlgo - تاج ألغو"
+          }
         },
         {
           "@type": "Service", 
           "name": "تطوير تطبيقات الهاتف المحمول",
-          "description": "تطوير تطبيقات أندرويد وآيفون عالية الجودة"
+          "description": "تطوير تطبيقات أندرويد وآيفون عالية الجودة باستخدام أحدث التقنيات",
+          "provider": {
+            "@type": "Organization",
+            "name": "TagAlgo - تاج ألغو"
+          }
         },
         {
           "@type": "Service",
           "name": "حلول التجارة الإلكترونية", 
-          "description": "تطوير منصات تجارة إلكترونية متكاملة وآمنة"
+          "description": "تطوير منصات تجارة إلكترونية متكاملة وآمنة مع دعم المدفوعات الإلكترونية",
+          "provider": {
+            "@type": "Organization",
+            "name": "TagAlgo - تاج ألغو"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "تصميم واجهات المستخدم UI/UX",
+          "description": "تصميم واجهات مستخدم احترافية وجذابة تحسن تجربة المستخدم",
+          "provider": {
+            "@type": "Organization",
+            "name": "TagAlgo - تاج ألغو"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "التسويق الرقمي",
+          "description": "خدمات تسويق رقمي شاملة لزيادة الوصول والتفاعل",
+          "provider": {
+            "@type": "Organization",
+            "name": "TagAlgo - تاج ألغو"
+          }
         }
       ],
       "knowsAbout": [
         "React", "Node.js", "Python", "MongoDB", "JavaScript", "TypeScript",
-        "تطوير المواقع", "تطوير التطبيقات", "التجارة الإلكترونية"
-      ]
+        "Web Development", "Mobile App Development", "E-commerce", "UI/UX Design",
+        "تطوير المواقع", "تطوير التطبيقات", "التجارة الإلكترونية", "تصميم الواجهات"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "50"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TagAlgo - تاج ألغو",
+      "url": "https://tagalgo.com",
+      "description": "TagAlgo - تاج ألغو: شركة رائدة في تطوير المواقع الإلكترونية وتطبيقات الهاتف المحمول",
+      "inLanguage": ["ar", "en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://tagalgo.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TagAlgo - تاج ألغو",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tagalgo.com/logo512.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "TagAlgo - تاج ألغو",
+      "image": "https://tagalgo.com/logo512.png",
+      "description": "شركة تطوير مواقع وتطبيقات في القاهرة، مصر",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cairo",
+        "addressRegion": "Cairo",
+        "addressCountry": "EG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "30.0444",
+        "longitude": "31.2357"
+      },
+      "url": "https://tagalgo.com",
+      "telephone": "+201155277506",
+      "email": "info@tagalgo.com",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "EGP, USD, EUR"
     }
     </script>
     
     <!-- Additional Performance and SEO -->
-    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="telephone=yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Tag Algo" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="TagAlgo" />
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- Additional SEO -->
+    <meta name="application-name" content="TagAlgo" />
+    <meta name="msapplication-tooltip" content="TagAlgo - تاج ألغو" />
+    <meta name="msapplication-starturl" content="/" />
+    
+    <!-- Rich Snippets Support -->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+    <meta name="DC.title" content="TagAlgo - تاج ألغو | تطوير مواقع ويب متقدمة" />
+    <meta name="DC.creator" content="TagAlgo - تاج ألغو" />
+    <meta name="DC.subject" content="Web Development, Mobile Apps, E-commerce, UI/UX Design" />
+    <meta name="DC.description" content="TagAlgo - تاج ألغو: شركة رائدة في تطوير المواقع الإلكترونية وتطبيقات الهاتف المحمول" />
+    <meta name="DC.publisher" content="TagAlgo - تاج ألغو" />
+    <meta name="DC.language" content="ar, en" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -111,6 +111,8 @@ const Technologies = () => {
                       src={tech.logo}
                       alt={tech.name}
                       className="w-10 h-10 object-contain filter brightness-0 invert"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   

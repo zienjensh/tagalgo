@@ -1,39 +1,61 @@
 {
-  "short_name": "Tag Algo",
-  "name": "Tag Algo - تاج ألغو | تطوير مواقع ويب متقدمة",
-  "description": "شركة رائدة في تطوير المواقع الإلكترونية، تطبيقات الويب، حلول التجارة الإلكترونية، وتطبيقات الهاتف المحمول",
+  "short_name": "TagAlgo",
+  "name": "TagAlgo - تاج ألغو | تطوير مواقع ويب متقدمة وحلول تقنية مبتكرة",
+  "description": "TagAlgo - تاج ألغو: شركة رائدة في تطوير المواقع الإلكترونية وتطبيقات الهاتف المحمول. نقدم خدمات تطوير مواقع ويب احترافية، تطبيقات أندرويد وآيفون، حلول التجارة الإلكترونية، تصميم واجهات المستخدم، التسويق الرقمي.",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     },
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#2563eb",
+  "theme_color": "#00ff88",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "ar",
   "dir": "rtl",
-  "categories": ["technology", "business", "productivity"],
+  "categories": ["technology", "business", "productivity", "developer"],
   "screenshots": [
     {
       "src": "screenshot1.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "TagAlgo Homepage"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with TagAlgo",
+      "url": "/#contact",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "description": "View our latest works",
+      "url": "/#portfolio",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
 }

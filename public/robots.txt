@@ -1,19 +1,28 @@
+# robots.txt for TagAlgo
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://tagalgo.com/sitemap.xml
+Sitemap: https://www.tagalgo.com/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay (optional, helps prevent server overload)
 Crawl-delay: 1
 
-# Disallow admin areas (if any)
+# Disallow admin and private areas (if any)
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /api/
+Disallow: /*.json$
 
-# Allow all search engines
+# Allow all major search engines
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
@@ -22,7 +31,16 @@ Allow: /
 User-agent: Slurp
 Allow: /
 
-# Block bad bots
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block bad bots and scrapers
 User-agent: AhrefsBot
 Disallow: /
 
@@ -30,4 +48,10 @@ User-agent: MJ12bot
 Disallow: /
 
 User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: BLEXBot
 Disallow: /

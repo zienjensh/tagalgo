@@ -103,6 +103,8 @@ const PortfolioModal = ({ isOpen, onClose }) => {
                   src={item.logo}
                   alt={item.name}
                   className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
