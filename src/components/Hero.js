@@ -2,6 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import coverImage from '../assets/cover.png';
 
+// Preload the cover image (LCP element) immediately
+if (typeof window !== 'undefined') {
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = coverImage;
+  link.fetchPriority = 'high';
+  if (!document.querySelector(`link[href="${coverImage}"]`)) {
+    document.head.appendChild(link);
+  }
+}
+
 const Hero = ({ onViewExamples }) => {
   const { t, isRTL } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
@@ -98,7 +110,7 @@ const Hero = ({ onViewExamples }) => {
             src={coverImage} 
             alt="TagAlgo - تاج ألغو Watermark" 
             className="w-full h-full object-contain filter blur-sm"
-            loading="lazy"
+            fetchPriority="high"
             decoding="async"
             style={{
               opacity: 0.15,
@@ -118,7 +130,7 @@ const Hero = ({ onViewExamples }) => {
             src={coverImage} 
             alt="TagAlgo - تاج ألغو Watermark" 
             className="w-full h-full object-contain filter blur-sm"
-            loading="lazy"
+            fetchPriority="high"
             decoding="async"
             style={{
               opacity: 0.2,
