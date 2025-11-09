@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const ContactModal = ({ isOpen, onClose }) => {
-  const { t, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

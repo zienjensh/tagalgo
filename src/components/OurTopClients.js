@@ -12,7 +12,6 @@ const OurTopClients = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollContainerRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
-  const animationRef = useRef(null);
 
   // Handle WhatsApp consultation
   const handleBecomeOne = () => {
