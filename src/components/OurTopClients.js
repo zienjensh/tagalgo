@@ -64,8 +64,10 @@ const OurTopClients = () => {
   ];
 
   return (
-    <section id="our-top-clients" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden rounded-3xl" style={{
-      backgroundColor: '#f0fdf4'
+    <section id="our-top-clients" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden rounded-3xl border border-neon-green/20 shadow-lg" style={{
+      background: 'rgba(240, 253, 244, 0.95)',
+      backdropFilter: 'blur(15px) saturate(160%)',
+      WebkitBackdropFilter: 'blur(15px) saturate(160%)'
     }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -141,7 +143,7 @@ const OurTopClients = () => {
                   scrollSnapStop: 'always'
                 }}
               >
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                <div className="glass-light rounded-2xl p-4 md:p-6 active:scale-95 transition-all duration-300 group-hover:scale-105 w-36 sm:w-40 md:w-48 touch-manipulation card-hover border border-white/60">
                   <div className="w-full h-20 md:h-24 flex items-center justify-center">
                     <img
                       src={client.logo}
@@ -166,7 +168,7 @@ const OurTopClients = () => {
                   scrollSnapStop: 'always'
                 }}
               >
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                <div className="glass-light rounded-2xl p-4 md:p-6 active:scale-95 transition-all duration-300 group-hover:scale-105 w-36 sm:w-40 md:w-48 touch-manipulation card-hover border border-white/60">
                   <div className="w-full h-20 md:h-24 flex items-center justify-center">
                     <img
                       src={client.logo}
@@ -191,7 +193,7 @@ const OurTopClients = () => {
                   scrollSnapStop: 'always'
                 }}
               >
-                <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 group-hover:scale-105 border border-gray-100 w-36 sm:w-40 md:w-48 touch-manipulation">
+                <div className="glass-light rounded-2xl p-4 md:p-6 active:scale-95 transition-all duration-300 group-hover:scale-105 w-36 sm:w-40 md:w-48 touch-manipulation card-hover border border-white/60">
                   <div className="w-full h-20 md:h-24 flex items-center justify-center">
                     <img
                       src={client.logo}
@@ -234,13 +236,16 @@ const OurTopClients = () => {
         }`}>
           <button 
             onClick={handleBecomeOne}
-            className="bg-gradient-to-r from-neon-green to-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-blue-500 hover:to-neon-green hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group relative overflow-hidden" 
+            className="bg-gradient-to-r from-neon-green to-blue-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-blue-500 hover:to-neon-green hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-neon-green/40 group relative overflow-hidden border-2 border-transparent hover:border-white/30" 
             style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
           >
-            <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+            <span className="relative z-10 group-hover:text-dark-grey transition-colors duration-300 flex items-center justify-center gap-2">
               {t('becomeOne')}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
-            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-90"></div>
           </button>
         </div>
       </div>

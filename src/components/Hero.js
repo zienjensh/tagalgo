@@ -166,12 +166,12 @@ const Hero = ({ onViewExamples }) => {
                             <span key={index}>{part}</span>
                           )
                         ));
-                      } else if (title.includes('واقعاً')) {
+                      } else if (title.includes('واقعا')) {
                         // Split by '...' first to handle the ellipsis properly
                         const parts = title.split('...');
                         if (parts.length > 1) {
                           const afterEllipsis = parts[1].trim(); // Remove leading/trailing spaces
-                          const realityIndex = afterEllipsis.indexOf('واقعاً');
+                          const realityIndex = afterEllipsis.indexOf('واقعا');
                           if (realityIndex !== -1) {
                             const beforeReality = afterEllipsis.substring(0, realityIndex).trim();
                             const afterReality = afterEllipsis.substring(realityIndex + 5).trim();
@@ -179,18 +179,18 @@ const Hero = ({ onViewExamples }) => {
                               <>
                                 <span>{parts[0].trim()}...</span>
                                 <span className="mx-2">{beforeReality}</span>
-                                <span className="neon-glow text-neon-green mx-1">واقعاً</span>
+                                <span className="neon-glow text-neon-green mx-1">واقعا</span>
                                 <span className="mx-1">{afterReality}</span>
                               </>
                             );
                           }
                         }
                         // Fallback to original logic if no ellipsis
-                        return title.split('واقعاً').map((part, index) => (
+                        return title.split('واقعا').map((part, index) => (
                           index === 0 ? (
                             <span key={index}>
                               {part.trim()}
-                              <span className="neon-glow text-neon-green mx-1">واقعاً</span>
+                              <span className="neon-glow text-neon-green mx-1">واقعا</span>
                             </span>
                           ) : (
                             <span key={index} className="mx-1">{part.trim()}</span>
@@ -209,29 +209,35 @@ const Hero = ({ onViewExamples }) => {
         </div>
 
             {/* Main Action Buttons Only */}
-            <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 transform transition-all duration-1000 delay-1600 ${
+            <div className={`flex flex-col sm:flex-row gap-4 sm:gap-5 mt-10 transform transition-all duration-1000 delay-1600 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
             }`} data-animate>
               {/* Main Action Buttons */}
               <button 
                 onClick={onViewExamples}
-                className="bg-dark-grey text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-gray-800 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-neon-green/20 flex-1 sm:flex-none btn-animated hover-lift" 
+                className="bg-dark-grey text-white px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-800 hover:scale-105 active:scale-95 transition-all duration-300 group relative overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-neon-green/30 flex-1 sm:flex-none btn-animated hover-lift border-2 border-transparent hover:border-neon-green/30" 
                 style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
               >
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300 font-semibold">
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300 font-semibold flex items-center justify-center gap-2">
                   {t('viewExamples')}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
-                <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-90"></div>
               </button>
               <button 
                 onClick={handleGetConsultation}
-                className="bg-white text-dark-grey px-4 py-3 rounded-full text-sm font-medium border-2 border-dark-grey hover:bg-gray-100 hover:scale-105 transition-all duration-300 group relative overflow-hidden shadow-2xl hover:shadow-dark-grey/20 flex-1 sm:flex-none btn-animated hover-lift" 
+                className="bg-white text-dark-grey px-6 py-3.5 rounded-full text-sm font-semibold border-2 border-dark-grey hover:bg-gray-50 hover:border-neon-green hover:text-neon-green hover:scale-105 active:scale-95 transition-all duration-300 group relative overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-dark-grey/20 flex-1 sm:flex-none btn-animated hover-lift" 
                 style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
               >
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300 font-semibold">
+                <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300 font-semibold flex items-center justify-center gap-2">
                   {t('getConsultation')}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                    <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </span>
-                <div className="absolute inset-0 bg-dark-grey transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <div className="absolute inset-0 bg-neon-green/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </button>
             </div>
           </div>

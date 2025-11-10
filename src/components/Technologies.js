@@ -50,7 +50,7 @@ const Technologies = () => {
   ];
 
   return (
-    <section id="technologies-section" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 bg-white relative overflow-hidden">
+    <section id="technologies-section" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 bg-white/80 backdrop-blur-sm relative overflow-hidden rounded-3xl border border-gray-100/50 shadow-sm">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 bg-neon-green rounded-full animate-pulse"></div>
@@ -100,24 +100,28 @@ const Technologies = () => {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105 border border-gray-100">
-                <div className="flex flex-col items-center space-y-3">
-                  {/* Icon */}
+              <div className="glass-light rounded-2xl p-6 card-hover group">
+                <div className="flex flex-col items-center space-y-4">
+                  {/* Icon with enhanced effect */}
                   <div 
-                    className="w-16 h-16 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-                    style={{ backgroundColor: tech.color }}
+                    className="w-16 h-16 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative overflow-hidden"
+                    style={{ 
+                      backgroundColor: tech.color,
+                      boxShadow: `0 4px 20px ${tech.color}50, 0 0 0 1px rgba(255, 255, 255, 0.2) inset`
+                    }}
                   >
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <img
                       src={tech.logo}
                       alt={tech.name}
-                      className="w-10 h-10 object-contain filter brightness-0 invert"
+                      className="w-10 h-10 object-contain filter brightness-0 invert relative z-10"
                       loading="lazy"
                       decoding="async"
                     />
                   </div>
                   
                   {/* Name */}
-                  <span className="text-gray-700 text-sm font-medium text-center group-hover:text-neon-green transition-colors duration-300">
+                  <span className="text-gray-700 text-sm font-semibold text-center group-hover:text-neon-green transition-colors duration-300">
                     {tech.name}
                   </span>
                 </div>

@@ -29,7 +29,7 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
   }, []);
 
   return (
-    <section id="services" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden bg-white">
+    <section id="services" className="py-20 md:py-24 px-6 ms-6 me-6 mb-20 md:mb-24 relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-100/50 shadow-sm">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-20 h-20 bg-neon-green rounded-full animate-pulse"></div>
@@ -83,35 +83,35 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
         }`}>
           {/* UI/UX Design Service */}
           <div className="relative group hover:scale-105 transition-all duration-500 hover:rotate-1 hover-lift" data-animate>
-            {/* Glass Effect */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30 shadow-2xl"></div>
+            {/* Enhanced Glass Effect */}
+            <div className="absolute inset-0 glass-light rounded-3xl"></div>
             <div className="relative z-10 p-8">
               <div className="relative">
-                <div className="absolute top-4 left-4 bg-white/30 backdrop-blur-sm text-dark-grey px-4 py-2 rounded-full text-sm font-medium border border-white/50">
+                <div className="absolute top-4 left-4 glass-button text-dark-grey px-4 py-2 rounded-full text-sm font-semibold">
                   Design
                 </div>
-                <div className="absolute top-4 right-4 w-10 h-10 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-neon-green transition-all duration-300 border border-white/50">
+                <div className="absolute top-4 right-4 w-11 h-11 glass-button rounded-full flex items-center justify-center group-hover:bg-neon-green group-hover:text-white transition-all duration-300">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-dark-grey group-hover:text-white">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 
                 {/* Service Content */}
-                <div className="mt-8">
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl">
+                <div className="mt-10">
+                  <div className="bg-gradient-to-br from-purple-50/90 to-pink-50/90 backdrop-blur-sm p-6 rounded-2xl border border-purple-100/50 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
                           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-purple-600 mb-2" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                        <h3 className="text-2xl font-bold text-purple-600 mb-2 group-hover:text-purple-700 transition-colors duration-300" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                           {t('uiUxDesign')}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-lg leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                    <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                       {t('uiUxDescription')}
                     </p>
                   </div>
@@ -134,8 +134,8 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
 
           {/* Web/App Development Service */}
           <div className="relative group hover:scale-105 transition-all duration-500 hover:-rotate-1 hover-lift" data-animate>
-            {/* Glass Effect */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30 shadow-2xl"></div>
+            {/* Enhanced Glass Effect */}
+            <div className="absolute inset-0 glass-light rounded-3xl"></div>
             <div className="relative z-10 p-8">
               <div className="relative">
                 <div className="absolute top-4 left-4 bg-white/30 backdrop-blur-sm text-dark-grey px-4 py-2 rounded-full text-sm font-medium border border-white/50">
@@ -148,21 +148,21 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
                 </div>
                 
                 {/* Service Content */}
-                <div className="mt-8">
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl">
+                <div className="mt-10">
+                  <div className="bg-gradient-to-br from-blue-50/90 to-cyan-50/90 backdrop-blur-sm p-6 rounded-2xl border border-blue-100/50 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
                           <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-blue-600 mb-2" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                        <h3 className="text-2xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors duration-300" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                           {t('webAppDevelopment')}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-lg leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                    <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                       {t('webAppDescription')}
                     </p>
                   </div>
@@ -173,8 +173,8 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
 
           {/* Marketing & Social Media Service */}
           <div className="relative group hover:scale-105 transition-all duration-500 hover:rotate-1 hover-lift" data-animate>
-            {/* Glass Effect */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30 shadow-2xl"></div>
+            {/* Enhanced Glass Effect */}
+            <div className="absolute inset-0 glass-light rounded-3xl"></div>
             <div className="relative z-10 p-8">
               <div className="relative">
                 <div className="absolute top-4 left-4 bg-white/30 backdrop-blur-sm text-dark-grey px-4 py-2 rounded-full text-sm font-medium border border-white/50">
@@ -187,21 +187,21 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
                 </div>
                 
                 {/* Service Content */}
-                <div className="mt-8">
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl">
+                <div className="mt-10">
+                  <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm p-6 rounded-2xl border border-green-100/50 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
                           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-green-600 mb-2" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                        <h3 className="text-2xl font-bold text-green-600 mb-2 group-hover:text-green-700 transition-colors duration-300" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                           {t('marketingSocialMedia')}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-lg leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                    <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                       {t('marketingDescription')}
                     </p>
                   </div>
@@ -212,8 +212,8 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
 
           {/* Brand Strategy Service */}
           <div className="relative group hover:scale-105 transition-all duration-500 hover:-rotate-1 hover-lift" data-animate>
-            {/* Glass Effect */}
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-md rounded-3xl border border-white/30 shadow-2xl"></div>
+            {/* Enhanced Glass Effect */}
+            <div className="absolute inset-0 glass-light rounded-3xl"></div>
             <div className="relative z-10 p-8">
               <div className="relative">
                 <div className="absolute top-4 left-4 bg-white/30 backdrop-blur-sm text-dark-grey px-4 py-2 rounded-full text-sm font-medium border border-white/50">
@@ -226,21 +226,21 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
                 </div>
                 
                 {/* Service Content */}
-                <div className="mt-8">
-                  <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-2xl">
+                <div className="mt-10">
+                  <div className="bg-gradient-to-br from-orange-50/90 to-red-50/90 backdrop-blur-sm p-6 rounded-2xl border border-orange-100/50 shadow-sm hover:shadow-md transition-shadow duration-300">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white">
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-orange-600 mb-2" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                        <h3 className="text-2xl font-bold text-orange-600 mb-2 group-hover:text-orange-700 transition-colors duration-300" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                           {t('brandStrategy')}
                         </h3>
                       </div>
                     </div>
-                    <p className="text-gray-700 text-lg leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
+                    <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}>
                       {t('brandDescription')}
                     </p>
                   </div>
@@ -256,23 +256,29 @@ const Cases = ({ onViewAllProjects, onStartProject }) => {
         }`} data-animate>
           <button 
             onClick={onViewAllProjects}
-            className="bg-white/20 backdrop-blur-md text-dark-grey px-8 py-4 rounded-full font-medium border-2 border-white/30 hover:border-neon-green hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg hover:scale-110 hover:shadow-2xl btn-animated hover-lift" 
+            className="glass-button text-dark-grey px-8 py-4 rounded-full font-semibold hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg hover:scale-110 hover:shadow-2xl btn-animated hover-lift active:scale-95" 
             style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
           >
-            <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300">
+            <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300 flex items-center justify-center gap-2">
               {t('viewAllProjects')}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
-            <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <div className="absolute inset-0 bg-neon-green transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-80"></div>
           </button>
           <button 
             onClick={onStartProject}
-            className="bg-neon-green text-white px-8 py-4 rounded-full font-medium hover:bg-white hover:text-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg border-2 border-neon-green hover:scale-110 hover:shadow-2xl btn-animated hover-lift" 
+            className="bg-gradient-to-r from-neon-green to-blue-500 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-500 hover:to-neon-green transition-all duration-300 group relative overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-neon-green/40 border-2 border-transparent hover:border-white/30 hover:scale-110 btn-animated hover-lift active:scale-95" 
             style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
           >
-            <span className="relative z-10 group-hover:text-neon-green transition-colors duration-300">
+            <span className="relative z-10 group-hover:text-dark-grey transition-colors duration-300 flex items-center justify-center gap-2">
               {t('startYourProject')}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
-            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-90"></div>
           </button>
         </div>
       </div>

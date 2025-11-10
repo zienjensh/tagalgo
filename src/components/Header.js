@@ -59,27 +59,38 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200 transition-all duration-500 ease-out ${
+    <header className={`fixed top-3 left-3 right-3 md:top-4 md:left-4 md:right-4 z-50 transition-all duration-500 ease-out ${
       isHeaderVisible ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-full opacity-0 scale-95'
     }`}>
-      {/* Animated bottom line */}
-      <div className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-neon-green to-blue-500 transition-all duration-700 ${
-        scrolled ? 'w-full' : 'w-0'
-      }`}></div>
-      
-      {/* Glow effect when visible */}
-      <div className={`absolute inset-0 bg-gradient-to-r from-neon-green/5 to-blue-500/5 transition-all duration-500 ${
-        isHeaderVisible ? 'opacity-100' : 'opacity-0'
-      }`}></div>
-      
-      {/* Slide down effect */}
-      <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-green to-blue-500 transition-all duration-500 ${
-        isHeaderVisible ? 'translate-y-0 opacity-100' : 'translate-y-1 opacity-0'
-      }`}></div>
+      {/* Oval Container */}
+      <div className={`relative mx-auto max-w-7xl bg-white/90 backdrop-blur-xl shadow-xl border border-gray-200/50 transition-all duration-500 ease-out overflow-hidden ${
+        scrolled ? 'shadow-2xl border-gray-300 py-2 md:py-2.5' : 'shadow-lg py-2.5 md:py-3.5'
+      }`} style={{
+        borderRadius: '9999px',
+        minHeight: '56px'
+      }}>
+        {/* Animated bottom line */}
+        <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-neon-green via-blue-500 to-neon-green transition-all duration-700 rounded-full ${
+          scrolled ? 'w-[90%] opacity-100' : 'w-0 opacity-0'
+        }`} style={{
+          boxShadow: scrolled ? '0 0 10px rgba(0, 255, 136, 0.5)' : 'none'
+        }}></div>
+        
+        {/* Subtle glow effect when visible */}
+        <div className={`absolute inset-0 bg-gradient-to-r from-neon-green/3 via-transparent to-blue-500/3 transition-all duration-500 pointer-events-none rounded-full ${
+          isHeaderVisible ? 'opacity-100' : 'opacity-0'
+        }`} style={{
+          borderRadius: '9999px'
+        }}></div>
+        
+        {/* Top accent line */}
+        <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-transparent via-neon-green/30 to-transparent transition-all duration-500 rounded-full ${
+          isHeaderVisible ? 'w-[90%] translate-y-0 opacity-100' : 'w-0 translate-y-1 opacity-0'
+        }`}></div>
 
-      
-      <div className="relative z-10 px-6 py-4">
-        <div className="flex items-center justify-between">
+        {/* Content Container */}
+        <div className="relative z-10 px-6 md:px-8 lg:px-12 py-2">
+          <div className="flex items-center justify-between">
           {/* Logo and Brand - Left Side */}
           <div className={`flex items-center space-x-3 transform transition-all duration-1000 ${
             isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
@@ -102,27 +113,27 @@ const Header = () => {
           }`}>
             <button 
               onClick={() => scrollToSection('technologies-section')}
-              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-full hover:bg-neon-green/10 text-black"
+              className="font-medium transition-all duration-300 relative group px-5 py-2.5 rounded-full hover:bg-neon-green/10 hover:text-neon-green text-gray-700 hover:scale-105 active:scale-95"
               style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
             >
               {t('technologies')}
-              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-neon-green transition-all duration-300 group-hover:w-3/4"></span>
+              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-neon-green to-blue-500 transition-all duration-300 group-hover:w-3/4 rounded-full"></span>
             </button>
             <button 
               onClick={() => scrollToSection('our-top-clients')}
-              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-full hover:bg-neon-green/10 text-black"
+              className="font-medium transition-all duration-300 relative group px-5 py-2.5 rounded-full hover:bg-neon-green/10 hover:text-neon-green text-gray-700 hover:scale-105 active:scale-95"
               style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
             >
               {t('ourClients')}
-              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-neon-green transition-all duration-300 group-hover:w-3/4"></span>
+              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-neon-green to-blue-500 transition-all duration-300 group-hover:w-3/4 rounded-full"></span>
             </button>
             <button 
               onClick={() => scrollToSection('services')}
-              className="font-medium transition-all duration-300 relative group px-4 py-2 rounded-full hover:bg-neon-green/10 text-black"
+              className="font-medium transition-all duration-300 relative group px-5 py-2.5 rounded-full hover:bg-neon-green/10 hover:text-neon-green text-gray-700 hover:scale-105 active:scale-95"
               style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
             >
               {t('services')}
-              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-neon-green transition-all duration-300 group-hover:w-3/4"></span>
+              <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-neon-green to-blue-500 transition-all duration-300 group-hover:w-3/4 rounded-full"></span>
             </button>
           </nav>
 
@@ -135,31 +146,32 @@ const Header = () => {
                   onClick={toggleLanguage}
                   aria-label="Toggle language"
                   title={language === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
-                  className="relative group w-10 h-10 rounded-full border border-gray-200 hover:border-neon-green bg-white shadow-sm hover:shadow-neon-green/20 flex items-center justify-center transition-all duration-300 overflow-hidden"
+                  className="relative group w-11 h-11 rounded-full border-2 border-gray-200 hover:border-neon-green bg-white shadow-md hover:shadow-lg hover:shadow-neon-green/20 flex items-center justify-center transition-all duration-300 overflow-hidden hover:scale-110 active:scale-95"
                   style={{ fontFamily: isRTL ? 'Tajawal, Cairo, Inter, sans-serif' : 'Taskor, Inter, sans-serif' }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-br from-neon-green/0 to-blue-500/0 group-hover:from-neon-green/10 group-hover:to-blue-500/10 transition-opacity"></span>
+                  <span className="absolute inset-0 bg-gradient-to-br from-neon-green/0 to-blue-500/0 group-hover:from-neon-green/15 group-hover:to-blue-500/15 transition-opacity duration-300 rounded-full"></span>
                   {/* Globe icon */}
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-700 group-hover:text-neon-green transition-colors">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-700 group-hover:text-neon-green transition-colors relative z-10">
                     <path d="M12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M2 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12 2C14.5 5.5 14.5 18.5 12 22C9.5 18.5 9.5 5.5 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   {/* Language chip */}
-                  <span className="absolute -bottom-1 right-0 translate-y-1/2 translate-x-1/4 text-[10px] px-1.5 py-0.5 rounded-full bg-dark-grey text-white shadow-sm">
+                  <span className="absolute -bottom-0.5 -right-0.5 text-[9px] px-1.5 py-0.5 rounded-full bg-gradient-to-r from-neon-green to-blue-500 text-white shadow-md font-bold z-20 border-2 border-white">
                     {language === 'ar' ? 'AR' : 'EN'}
                   </span>
                 </button>
                 {/* Facebook Icon */}
                 <a 
                   href="https://www.facebook.com" 
-                  className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-all duration-300 group"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-50 hover:bg-neon-green/10 border-2 border-transparent hover:border-neon-green/30 transition-all duration-300 group hover:scale-110 active:scale-95"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Facebook"
                 >
                   <svg
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     className="text-gray-600 group-hover:text-neon-green transition-colors duration-300"
@@ -174,13 +186,14 @@ const Header = () => {
                 {/* WhatsApp Icon */}
                 <a 
                   href="https://wa.me/201289963550" 
-                  className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-all duration-300 group"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-gray-50 hover:bg-neon-green/10 border-2 border-transparent hover:border-neon-green/30 transition-all duration-300 group hover:scale-110 active:scale-95"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="WhatsApp"
                 >
                   <svg
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     className="text-gray-600 group-hover:text-neon-green transition-colors duration-300"
@@ -192,6 +205,7 @@ const Header = () => {
                   </svg>
                 </a>
               </div>
+          </div>
         </div>
       </div>
     </header>
