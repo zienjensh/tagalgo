@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 const AboutUs = () => {
-  const { t, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
 
   useEffect(() => {
     // Add JSON-LD structured data
